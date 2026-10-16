@@ -1,0 +1,68 @@
+// `bug` references a localized explanation in the matching challenge dictionary.
+export const challengeLines = [
+  { code: 'const int LED = 9', bug: 'semicolon' },
+  { code: 'int compteur = 0;' },
+  { code: '' },
+  { code: 'void setup() {' },
+  { code: '  pinMode(LED, INPUT);', bug: 'pinmode' },
+  { code: '  Serial.begin(9600);' },
+  { code: '}' },
+  { code: '' },
+  { code: 'void Loop() {', bug: 'loopname' },
+  { code: '  analogWrite(LED, 300);', bug: 'pwm' },
+  { code: '  delay(500);' },
+  { code: '  compteur++;' },
+  { code: '  if (compteur = 10) {', bug: 'assign' },
+  { code: '    Serial.println("Dix cycles");' },
+  { code: '  }' },
+  { code: '}' },
+]
+export const TOTAL_BUGS = challengeLines.filter((l) => l.bug).length
+
+export const webChallengeLines = [
+  { code: '<!DOCTYPE html>' },
+  { code: '<html>', bug: 'htmlLang' },
+  { code: '<head>' },
+  { code: '  <meta charset="UTF-8">' },
+  { code: '  <meta name="viewport" content="width=device-width">', bug: 'viewport' },
+  { code: '  <title>Mon portfolio</title>' },
+  { code: '  <style>' },
+  { code: '    body { margin: 0; font-family: Arial, sans-serif; }' },
+  { code: '    .container { width: 1000px; margin: auto; }', bug: 'fixedWidth' },
+  { code: '  </style>' },
+  { code: '</head>' },
+  { code: '<body>' },
+  { code: '  <header class="container">' },
+  { code: '    <h1>Mon portfolio</h1>' },
+  { code: '    <a href="#projects">Voir mes projets</a>', bug: 'anchorTarget' },
+  { code: '  </header>' },
+  { code: '  <main class="container">' },
+  { code: '    <section id="project">' },
+  { code: '      <h2>Mes projets</h2>' },
+  { code: '      <img src="projet.jpg">', bug: 'imageAlt' },
+  { code: '    </section>' },
+  { code: '  </main>' },
+  { code: '</body>' },
+  { code: '</html>' },
+]
+
+export const challengeSets = {
+  arduino: {
+    lines: challengeLines,
+    bugsKey: 'bugs',
+    titleKey: 'arduinoTitle',
+    subtitleKey: 'arduinoSubtitle',
+    hintKey: 'arduinoHint',
+    file: 'sketch_led.ino',
+    totalBugs: TOTAL_BUGS,
+  },
+  web: {
+    lines: webChallengeLines,
+    bugsKey: 'webBugs',
+    titleKey: 'webTitle',
+    subtitleKey: 'webSubtitle',
+    hintKey: 'webHint',
+    file: 'index.html',
+    totalBugs: webChallengeLines.filter((line) => line.bug).length,
+  },
+}
