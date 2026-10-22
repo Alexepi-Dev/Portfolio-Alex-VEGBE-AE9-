@@ -78,7 +78,6 @@ export default function EditorialPage({ type }) {
     return (
       <main className="editorial-page container">
         <header className="editorial-page-header">
-          <p className="eyebrow">/ {collectionLabel}</p>
           <h1>{collectionLabel}</h1>
           <p className="section-lead">
             {type === 'actualites' ? labels.newsDescription : labels.articlesDescription}
@@ -112,7 +111,6 @@ export default function EditorialPage({ type }) {
       <Link className="editorial-back" to={`/${type}`}>{labels.backToList}</Link>
       <article>
         <header className="editorial-detail-header">
-          <p className="eyebrow">/ {collectionLabel}</p>
           <h1>{entry.title}</h1>
           <p className="editorial-meta">
             <span>{labels.publishedOn} </span>

@@ -162,11 +162,11 @@ section[id]:not(#accueil):not(#contact) .section-title::before {
 /* ================================
    HEADER
 ================================ */
-header {
+header.site-controls {
   position: fixed; inset: 12px 12px auto auto; z-index: 999; width: max-content;
   background: transparent; border: 0; box-shadow: none;
 }
-header.is-scrolled { border: 0; box-shadow: none; }
+header.site-controls.is-scrolled { border: 0; box-shadow: none; }
 
 nav { height: auto; display: flex; justify-content: flex-start; align-items: center; gap: 16px; }
 .logo {
@@ -381,7 +381,7 @@ footer { background: var(--footer-bg); padding: 30px 0; color: var(--text-muted)
   .contact-header { margin-bottom: 30px; }
   section.contact form { padding: 22px; }
 
-  header { inset: 12px 12px auto auto; }
+  header.site-controls { inset: 12px 12px auto auto; }
   .logo { display: none; }
   nav { height: auto; width: auto; padding: 0; }
   nav ul { display: flex; flex: 1; justify-content: flex-start; gap: 2px; overflow-x: auto; scrollbar-width: none; }
