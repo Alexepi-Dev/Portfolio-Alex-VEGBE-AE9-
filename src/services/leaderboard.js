@@ -3,7 +3,13 @@ import { createClient } from '@supabase/supabase-js'
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL?.trim()
 const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY?.trim()
 
-export const isLeaderboardConfigured = Boolean(supabaseUrl && supabaseAnonKey)
+const hasPlaceholderCredentials =
+  !supabaseUrl ||
+  !supabaseAnonKey ||
+  /^https:\/\/your-project\.supabase\.co(?:\/|$)/i.test(supabaseUrl) ||
+  /^your-(?:anon|publishable)-key$/i.test(supabaseAnonKey)
+
+export const isLeaderboardConfigured = !hasPlaceholderCredentials
 
 const supabase = isLeaderboardConfigured ? createClient(supabaseUrl, supabaseAnonKey) : null
 
