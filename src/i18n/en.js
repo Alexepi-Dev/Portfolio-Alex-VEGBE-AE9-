@@ -192,7 +192,7 @@ const en = {
       submitScore: 'Save score', savingScore: 'Submitting…', submitError: 'Unable to save your score. Please try again.',
       scoreSaved: 'Your score has been added to the leaderboard!',
       leaderboard: 'Leaderboard — top 10', loadingLeaderboard: 'Loading leaderboard…',
-      configureLeaderboard: 'The site owner needs to configure the shared leaderboard.',
+      configureLeaderboard: 'Check your project URL and public Supabase key (anon or sb_publishable) in your local environment file, then restart Vite.',
       leaderboardError: 'The leaderboard is temporarily unavailable.',
       emptyLeaderboard: 'No scores have been recorded yet.',
     },

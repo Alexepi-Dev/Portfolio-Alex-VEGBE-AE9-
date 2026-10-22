@@ -138,7 +138,7 @@ export default function AnagramGame() {
 
   const submitScore = async (e) => {
     e.preventDefault()
-    if (scoreSubmitting || scoreSubmitted) return
+    if (scoreSubmitting || scoreSubmitted || !isLeaderboardConfigured) return
 
     const name = playerName.trim()
     if (!name) return
@@ -247,26 +247,30 @@ export default function AnagramGame() {
         ) : (
           <>
             {!scoreSubmitted ? (
-              <form className="leaderboard-submit" onSubmit={submitScore}>
-                <label htmlFor="player-name">{g.nameLabel}</label>
-                <div className="inline-form">
-                  <input
-                    id="player-name"
-                    type="text"
-                    value={playerName}
-                    onChange={(e) => setPlayerName(e.target.value)}
-                    placeholder={g.namePlaceholder}
-                    maxLength={24}
-                    autoComplete="nickname"
-                    required
-                    disabled={scoreSubmitting}
-                  />
-                  <button type="submit" className="app-btn app-btn-success" disabled={scoreSubmitting}>
-                    {scoreSubmitting ? g.savingScore : g.submitScore}
-                  </button>
-                </div>
-                {scoreSubmitError && <p className="leaderboard-error" role="alert">{g.submitError}</p>}
-              </form>
+              isLeaderboardConfigured ? (
+                <form className="leaderboard-submit" onSubmit={submitScore}>
+                  <label htmlFor="player-name">{g.nameLabel}</label>
+                  <div className="inline-form">
+                    <input
+                      id="player-name"
+                      type="text"
+                      value={playerName}
+                      onChange={(e) => setPlayerName(e.target.value)}
+                      placeholder={g.namePlaceholder}
+                      maxLength={24}
+                      autoComplete="nickname"
+                      required
+                      disabled={scoreSubmitting}
+                    />
+                    <button type="submit" className="app-btn app-btn-success" disabled={scoreSubmitting}>
+                      {scoreSubmitting ? g.savingScore : g.submitScore}
+                    </button>
+                  </div>
+                  {scoreSubmitError && <p className="leaderboard-error" role="alert">{g.submitError}</p>}
+                </form>
+              ) : (
+                <p className="leaderboard-error" role="alert">{g.configureLeaderboard}</p>
+              )
             ) : (
               <p className="leaderboard-success" role="status">{g.scoreSaved}</p>
             )}

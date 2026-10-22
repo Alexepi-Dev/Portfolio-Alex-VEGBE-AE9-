@@ -192,7 +192,7 @@ const fr = {
       submitScore: 'Enregistrer', savingScore: 'Envoi…', submitError: "Impossible d'enregistrer le score. Réessayez.",
       scoreSaved: 'Votre score a été ajouté au classement !',
       leaderboard: 'Classement — top 10', loadingLeaderboard: 'Chargement du classement…',
-      configureLeaderboard: 'Le classement partagé doit être configuré par le propriétaire du site.',
+      configureLeaderboard: 'Vérifiez l’URL du projet et sa clé publique Supabase (anon ou sb_publishable) dans votre fichier de configuration locale, puis redémarrez Vite.',
       leaderboardError: 'Le classement est momentanément indisponible.',
       emptyLeaderboard: 'Aucun score enregistré pour le moment.',
     },
