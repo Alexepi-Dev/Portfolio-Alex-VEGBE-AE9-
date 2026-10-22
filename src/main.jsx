@@ -6,6 +6,7 @@ import { SettingsProvider } from './context/SettingsContext'
 import './styles/global.css'
 import './styles/sections.css'
 import './styles/apps.css'
+import './styles/editorial.css'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>

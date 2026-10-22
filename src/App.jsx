@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { Suspense, lazy, useEffect } from 'react'
 import { Route, Routes, useLocation } from 'react-router-dom'
 import { AnimatePresence, motion, MotionConfig } from 'framer-motion'
 import Header from './components/Header'
@@ -9,6 +9,9 @@ import AnagramGame from './pages/AnagramGame'
 import LoanCalculator from './pages/LoanCalculator'
 import Arcade from './pages/Arcade'
 import Challenge from './components/Challenge'
+import { useSettings } from './context/SettingsContext'
+
+const EditorialPage = lazy(() => import('./pages/EditorialPage'))
 
 const pageVariants = {
   initial: { opacity: 0, y: 24 },
@@ -18,6 +21,15 @@ const pageVariants = {
 
 function Page({ children }) {
   return <motion.div variants={pageVariants} initial="initial" animate="enter" exit="exit">{children}</motion.div>
+}
+
+function EditorialLoading() {
+  const { t } = useSettings()
+  return (
+    <main className="editorial-page container" aria-live="polite">
+      <p className="editorial-empty">{t.editorial.loading}</p>
+    </main>
+  )
 }
 
 export default function App() {
@@ -33,6 +45,10 @@ export default function App() {
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<Page><Home /></Page>} />
+          <Route path="/actualites" element={<Page><Suspense fallback={<EditorialLoading />}><EditorialPage type="actualites" /></Suspense></Page>} />
+          <Route path="/actualites/:slug" element={<Page><Suspense fallback={<EditorialLoading />}><EditorialPage type="actualites" /></Suspense></Page>} />
+          <Route path="/articles" element={<Page><Suspense fallback={<EditorialLoading />}><EditorialPage type="articles" /></Suspense></Page>} />
+          <Route path="/articles/:slug" element={<Page><Suspense fallback={<EditorialLoading />}><EditorialPage type="articles" /></Suspense></Page>} />
           <Route path="/lettres-mysteres" element={<Page><AnagramGame /></Page>} />
           <Route path="/calculateur-pret" element={<Page><LoanCalculator /></Page>} />
           <Route path="/arcade" element={<Page><Arcade /></Page>} />

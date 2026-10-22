@@ -8,6 +8,7 @@ Version React (Vite) du portfolio :
 - **Défi** : trouver 5 bugs dans un code Arduino (score, chrono, record local)
 - **3 mini-apps** en composants : Lettres Mystères, Calculateur de prêt, Laboratoire de boucles
 - Formulaire de contact (Formspree), images WebP, transitions animées
+- Actualités et articles gérés par Decap CMS, avec contenu Markdown versionné dans Git
 
 ## Lancer
 ```bash
@@ -25,5 +26,15 @@ npm run build
 | Couleurs                                 | haut de `src/styles/global.css` |
 | Images                                   | `public/images/` |
 
-## Déploiement GitHub Pages
-Poussez sur `main`, puis **Settings → Pages → Source : GitHub Actions**. Le workflow `.github/workflows/deploy.yml` fait le reste (`HashRouter` + `base: './'`).
+La configuration et les étapes d’activation de Decap CMS sont décrites dans [`docs/DECAP-CMS-SETUP.md`](./docs/DECAP-CMS-SETUP.md). L’authentification Turbo doit être configurée avant d’utiliser `/admin/`.
+
+## Déploiement Netlify
+Site : [alexvegbeae9.netlify.app](https://alexvegbeae9.netlify.app/).
+
+Paramètres de production à vérifier dans Netlify :
+
+- Branche : `main`
+- Commande de build : `npm run build`
+- Dossier publié : `dist`
+
+Le portfolio utilise `HashRouter` et conserve `base: './'`. Aucun fichier de configuration Netlify n’est suivi dans ce dépôt; ces paramètres doivent donc être confirmés dans le tableau de bord Netlify.

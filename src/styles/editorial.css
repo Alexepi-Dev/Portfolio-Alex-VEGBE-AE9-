@@ -1,0 +1,127 @@
+.editorial-section { --sec: var(--c-parcours); }
+.editorial-page {
+  min-height: 70vh;
+  padding-top: 130px;
+  padding-bottom: 80px;
+}
+.editorial-page-header { text-align: center; margin-bottom: 48px; }
+.editorial-page-header h1,
+.editorial-detail-header h1 { font-size: clamp(2rem, 5vw, 3.4rem); line-height: 1.15; }
+.editorial-page-header .section-lead { margin: 18px auto 0; }
+.editorial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(290px, 100%), 1fr));
+  gap: 24px;
+}
+.editorial-card {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+.editorial-card-image { display: block; overflow: hidden; aspect-ratio: 16 / 9; background: var(--surface-light); }
+.editorial-card-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.35s ease; }
+.editorial-card-image:hover img { transform: scale(1.04); }
+.editorial-card-content { padding: 24px; }
+.editorial-card-content time,
+.editorial-meta { color: var(--text-muted); font-size: 0.84rem; }
+.editorial-category {
+  display: inline-flex;
+  margin-left: 10px;
+  padding: 3px 10px;
+  border: 1px solid color-mix(in srgb, var(--secondary) 40%, var(--border));
+  border-radius: 20px;
+  color: var(--sec-text, var(--secondary));
+  font-size: 0.76rem;
+  font-weight: 600;
+}
+.editorial-card h2,
+.editorial-card h3 { margin: 12px 0; font-size: 1.2rem; line-height: 1.4; }
+.editorial-card h2 a:hover,
+.editorial-card h3 a:hover,
+.editorial-read-more:hover { color: var(--secondary); }
+.editorial-card-content > p { color: var(--text-light); }
+.editorial-read-more {
+  display: inline-block;
+  margin-top: 16px;
+  color: var(--secondary);
+  font-weight: 600;
+}
+.editorial-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; margin-top: 38px; }
+.editorial-actions .btn-link { padding: 12px 22px; font-size: 0.9rem; }
+.editorial-empty {
+  padding: 28px;
+  border: 1px dashed var(--border);
+  border-radius: 16px;
+  color: var(--text-light);
+  text-align: center;
+}
+.editorial-back {
+  display: inline-flex;
+  margin-bottom: 28px;
+  color: var(--secondary);
+  font-weight: 600;
+}
+.editorial-back:hover { text-decoration: underline; text-underline-offset: 4px; }
+.editorial-detail { max-width: 920px; }
+.editorial-detail-header { text-align: center; }
+.editorial-detail-header .eyebrow { margin-bottom: 12px; }
+.editorial-meta { margin-top: 18px; }
+.editorial-description { max-width: 720px; margin: 24px auto; color: var(--text-light); font-size: 1.12rem; }
+.editorial-cover {
+  width: 100%;
+  max-height: 520px;
+  margin: 34px auto 0;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  object-fit: cover;
+}
+.editorial-tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 18px; }
+.editorial-tags li {
+  padding: 4px 11px;
+  border: 1px solid var(--border);
+  border-radius: 30px;
+  color: var(--text-light);
+  font-size: 0.8rem;
+}
+.editorial-body {
+  max-width: 760px;
+  margin: 48px auto 0;
+  color: var(--text-light);
+  overflow-wrap: anywhere;
+}
+.editorial-body > * + * { margin-top: 1.2em; }
+.editorial-body h2,
+.editorial-body h3,
+.editorial-body h4 { color: var(--text); line-height: 1.3; }
+.editorial-body h2 { font-size: 1.8rem; }
+.editorial-body h3 { font-size: 1.4rem; }
+.editorial-body ul,
+.editorial-body ol { padding-left: 1.5em; list-style: revert; }
+.editorial-body li + li { margin-top: 0.45em; }
+.editorial-body a { color: var(--secondary); text-decoration: underline; text-underline-offset: 3px; }
+.editorial-body blockquote {
+  padding: 4px 0 4px 20px;
+  border-left: 3px solid var(--secondary);
+  color: var(--text-muted);
+}
+.editorial-body pre {
+  padding: 18px;
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--background-alt);
+}
+.editorial-body code { font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace; }
+.editorial-related { margin-top: 72px; }
+.editorial-related h2 { margin-bottom: 24px; font-size: 1.7rem; }
+
+@media (max-width: 600px) {
+  .editorial-page { padding-top: 105px; }
+  .editorial-card-content { padding: 20px; }
+  .editorial-actions { align-items: stretch; flex-direction: column; }
+  .editorial-actions .btn-link { justify-content: center; }
+  .editorial-category { margin-left: 5px; }
+}

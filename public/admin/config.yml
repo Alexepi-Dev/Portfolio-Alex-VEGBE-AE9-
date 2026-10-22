@@ -1,0 +1,49 @@
+backend:
+  name: turbo-github
+  repo: Alexepi-Dev/Portfolio-Alex-VEGBE-AE9-
+  branch: main
+  turbo_site_id: cc61f12e-7a65-44b1-8c82-425941be690a
+
+locale: fr
+
+slug:
+  encoding: ascii
+  clean_accents: true
+
+media_folder: public/images/uploads
+public_folder: /images/uploads
+
+collections:
+  - name: actualites
+    label: Actualités
+    label_singular: Actualité
+    folder: src/content/actualites
+    create: true
+    extension: md
+    format: frontmatter
+    slug: '{{year}}{{month}}{{day}}-{{hour}}{{minute}}{{second}}-{{slug}}'
+    summary: '{{title}} — {{date}}'
+    fields:
+      - { label: Titre, name: title, widget: string }
+      - { label: Date de publication, name: date, widget: datetime, date_format: 'YYYY-MM-DD', time_format: false }
+      - { label: Résumé, name: description, widget: text }
+      - { label: Image de couverture, name: cover, widget: image, required: false }
+      - { label: Catégorie, name: category, widget: string, required: false }
+      - { label: Contenu, name: body, widget: markdown }
+  - name: articles
+    label: Articles
+    label_singular: Article
+    folder: src/content/articles
+    create: true
+    extension: md
+    format: frontmatter
+    slug: '{{year}}{{month}}{{day}}-{{hour}}{{minute}}{{second}}-{{slug}}'
+    summary: '{{title}} — {{date}}'
+    fields:
+      - { label: Titre, name: title, widget: string }
+      - { label: Date de publication, name: date, widget: datetime, date_format: 'YYYY-MM-DD', time_format: false }
+      - { label: Résumé, name: description, widget: text }
+      - { label: Image de couverture, name: cover, widget: image, required: false }
+      - { label: Catégorie, name: category, widget: string, required: false }
+      - { label: Mots-clés, name: tags, widget: list, required: false }
+      - { label: Contenu, name: body, widget: markdown }
