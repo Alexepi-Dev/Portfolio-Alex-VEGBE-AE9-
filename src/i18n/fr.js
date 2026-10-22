@@ -14,7 +14,7 @@ const fr = {
       web: { title: 'Web & identité visuelle', desc: "Sites et interfaces front-end en React, accompagnés d'un graphisme de marque cohérent." },
     },
   },
-  nav: { home: 'Accueil', about: 'À propos', services: 'Services', projects: 'Projets', skills: 'Compétences', challenge: 'Défi', contact: 'Contact' },
+  nav: { label: 'Navigation des sections', home: 'Accueil', about: 'À propos', services: 'Services', projects: 'Projets', skills: 'Compétences', challenge: 'Défi', contact: 'Contact' },
   editorial: {
     news: 'Actualités',
     articles: 'Articles',

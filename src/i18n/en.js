@@ -14,7 +14,7 @@ const en = {
       web: { title: 'Web & visual identity', desc: 'Front-end sites and interfaces in React, with consistent brand graphics.' },
     },
   },
-  nav: { home: 'Home', about: 'About', services: 'Services', projects: 'Projects', skills: 'Skills', challenge: 'Challenge', contact: 'Contact' },
+  nav: { label: 'Section navigation', home: 'Home', about: 'About', services: 'Services', projects: 'Projects', skills: 'Skills', challenge: 'Challenge', contact: 'Contact' },
   editorial: {
     news: 'News',
     articles: 'Articles',

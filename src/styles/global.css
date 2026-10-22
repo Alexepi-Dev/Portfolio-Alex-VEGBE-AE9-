@@ -185,6 +185,19 @@ nav ul a { font-family: var(--font-heading); font-weight: 600; }
 .tool-btn.lang-btn { border-radius: 30px; letter-spacing: 1px; }
 .tool-btn:hover { transform: translateY(-2px) rotate(-6deg); border-color: var(--secondary); }
 
+.section-navigation {
+  position: fixed; z-index: 998; top: 50%; right: 20px; transform: translateY(-50%);
+  width: auto; height: auto; padding: 10px; display: flex; flex-direction: column; gap: 8px;
+  border: 1px solid var(--border); border-radius: 30px; background: var(--header-bg);
+  -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); box-shadow: var(--shadow);
+}
+.section-navigation a {
+  width: 40px; height: 40px; display: grid; place-items: center; border-radius: 50%;
+  color: var(--text-muted); background: transparent; transition: color 0.2s, background-color 0.2s, transform 0.2s;
+}
+.section-navigation a:hover { color: var(--secondary); background: var(--glow); transform: scale(1.08); }
+.section-navigation a svg { width: 16px; height: 16px; }
+
 /* ================================
    HERO
 ================================ */
@@ -382,6 +395,11 @@ footer { background: var(--footer-bg); padding: 30px 0; color: var(--text-muted)
   section.contact form { padding: 22px; }
 
   header.site-controls { inset: 12px 12px auto auto; }
+  .section-navigation {
+    top: auto; right: 10px; bottom: 10px; left: 10px; transform: none; width: auto; height: auto;
+    padding: 6px; flex-direction: row; justify-content: space-around; gap: 2px; border-radius: 24px;
+  }
+  .section-navigation a { flex: 1 1 0; max-width: 44px; height: 40px; }
   .logo { display: none; }
   nav { height: auto; width: auto; padding: 0; }
   nav ul { display: flex; flex: 1; justify-content: flex-start; gap: 2px; overflow-x: auto; scrollbar-width: none; }

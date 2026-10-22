@@ -2,6 +2,7 @@ import { Suspense, lazy, useEffect } from 'react'
 import { Route, Routes, useLocation } from 'react-router-dom'
 import { AnimatePresence, motion, MotionConfig } from 'framer-motion'
 import Header from './components/Header'
+import SectionNavigation from './components/SectionNavigation'
 import Footer from './components/Footer'
 import BackToTop from './components/BackToTop'
 import Home from './pages/Home'
@@ -42,6 +43,7 @@ export default function App() {
   return (
     <MotionConfig reducedMotion="user">
       <Header />
+      <SectionNavigation />
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<Page><Home /></Page>} />
