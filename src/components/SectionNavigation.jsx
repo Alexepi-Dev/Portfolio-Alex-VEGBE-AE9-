@@ -50,6 +50,7 @@ export default function SectionNavigation() {
             onClick={(event) => goToSection(event, id)}
           >
             <Icon aria-hidden="true" />
+            <span>{sectionLabel}</span>
           </a>
         )
       })}
