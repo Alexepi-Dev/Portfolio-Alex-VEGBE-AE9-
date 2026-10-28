@@ -14,7 +14,6 @@ export const physicalProjects = [
 export const webProjects = [
   { id: 'lettres', route: '/lettres-mysteres', image: 'images/lettres-mysteres-logo-v2.png' },
   { id: 'pret', route: '/calculateur-pret', image: 'images/calculateur-pret-logo.png' },
-  { id: 'arcade', route: '/arcade', image: 'images/alex-arcade-logo.png' },
 ]
 
 export const services = ['businessLaw', 'digitalLaw', 'legalDesign', 'cad', 'cnc', 'arduino', 'web']
@@ -42,5 +41,6 @@ export const FORMSPREE_URL = 'https://formspree.io/f/mjggldav'
 
 export const socials = [
   { id: 'linkedin', label: 'LinkedIn', href: 'https://www.linkedin.com/in/alex-koffi-vegbe-a69589306' },
+  { id: 'github', label: 'GitHub — Alexepi-Dev (A.K. VEGBE)', href: 'https://github.com/Alexepi-Dev' },
   { id: 'facebook', label: 'Facebook', href: 'https://web.facebook.com/alex.epiphane.vegbe/' },
 ]

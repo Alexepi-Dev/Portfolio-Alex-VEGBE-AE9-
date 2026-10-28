@@ -17,6 +17,28 @@ npm run dev
 npm run build
 ```
 
+## Qualité et tests
+```bash
+npm run lint
+npm test
+npm run build
+```
+
+Les vérifications lint, tests unitaires et build sont également exécutées automatiquement par GitHub Actions sur les changements vers `main` et les pull requests.
+
+## Référencement Google
+
+La page expose des métadonnées Open Graph, Twitter, une URL canonique, un fichier `robots.txt`, un sitemap XML et des données structurées `Person`.
+
+Pour vérifier le site dans Google Search Console :
+
+1. Ajoutez la propriété `https://alexvegbeae9.netlify.app/`.
+2. Choisissez la méthode de vérification par balise HTML.
+3. Copiez uniquement la valeur du paramètre `content`.
+4. Placez cette valeur dans `VITE_GOOGLE_SITE_VERIFICATION` du fichier `.env.local`.
+5. Reconstruisez et déployez le site, puis validez la propriété dans Search Console.
+6. Soumettez l’adresse `https://alexvegbeae9.netlify.app/sitemap.xml` dans le menu **Sitemaps**.
+
 ## Modifier le contenu
 | Je veux changer…                         | Fichier |
 | ---------------------------------------- | ------- |

@@ -1,8 +1,8 @@
-import { FaLinkedin, FaFacebook } from 'react-icons/fa'
+import { FaLinkedin, FaGithub, FaFacebook } from 'react-icons/fa'
 import { useSettings } from '../context/SettingsContext'
 import { socials } from '../data/content'
 
-const icons = { linkedin: FaLinkedin, facebook: FaFacebook }
+const icons = { linkedin: FaLinkedin, github: FaGithub, facebook: FaFacebook }
 
 export default function Footer() {
   const { t } = useSettings()

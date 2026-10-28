@@ -5,15 +5,6 @@ const en = {
   marqueeLabel: 'Tools and know-how',
   marquee: ['3D modelling', 'CAD', '3D printing', 'Laser cutting', 'CNC', 'Arduino', 'C++', 'React', 'JavaScript', 'HTML5 / CSS3', 'Graphic design', 'UI / UX', 'Business & startup law', 'Digital law', 'Intellectual property', 'Legal Design'],
   stats: { physical: 'Objects designed', web: 'Web apps', badges: 'Cisco badges' },
-  services: {
-    title: 'What I can do for you',
-    items: {
-      cad: { title: '3D design & printing', desc: 'From idea to 3D model to printed object: functional parts, decorative pieces and prototypes.' },
-      fab: { title: 'Laser cutting & CNC', desc: 'Precision engraving and cutting on wood and acrylic for night lights, signs and custom objects.' },
-      arduino: { title: 'Arduino prototyping', desc: 'Smart embedded systems in C++: sensors, LEDs, automation and small connected objects.' },
-      web: { title: 'Web & visual identity', desc: 'Front-end sites and interfaces in React, with consistent brand graphics.' },
-    },
-  },
   nav: { label: 'Section navigation', home: 'Home', about: 'About', services: 'Services', projects: 'Projects', skills: 'Skills', challenge: 'Challenge', contact: 'Contact' },
   editorial: {
     news: 'News',
@@ -114,7 +105,6 @@ const en = {
       },
       lettres: { title: 'Mystery Letters', cta: 'Play the game', desc: "An interactive React game. Anagrams are unscrambled against the clock, combining algorithmic logic, state management and game design." },
       pret: { title: 'Loan Calculator', cta: 'Calculate', desc: "A financial app that computes monthly payments in real time. It shows clean dynamic interfaces, input validation and responsive design." },
-      arcade: { title: 'Alex Arcade', cta: 'Play', desc: "A neon web development quiz: 10 random questions, 15 seconds per answer, score and local best record, in a retro-futuristic interface." },
     },
     tech: { cad: '3D modelling', cadDrafting: 'CAD', product: 'Product design', cnc: 'CNC / laser cutting', lamp: 'Lighting', electronics: 'Electronics', design: 'Design' },
   },
@@ -208,7 +198,6 @@ const en = {
       errYears: 'Please enter a positive term in years.',
       currency: 'XOF',
     },
-    arcade: { title: 'Alex Arcade' },
   },
 }
 export default en

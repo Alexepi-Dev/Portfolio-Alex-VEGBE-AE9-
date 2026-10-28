@@ -5,15 +5,6 @@ const fr = {
   marqueeLabel: 'Outils et savoir-faire',
   marquee: ['Modélisation 3D', 'CAO', 'Impression 3D', 'Découpe laser', 'CNC', 'Arduino', 'C++', 'React', 'JavaScript', 'HTML5 / CSS3', 'Graphisme', 'UI / UX', 'Droit des entreprises & startups', 'Droit du numérique', 'Propriété intellectuelle', 'Legal Design'],
   stats: { physical: 'Objets conçus', web: 'Applications web', badges: 'Badges Cisco' },
-  services: {
-    title: 'Ce que je peux faire pour vous',
-    items: {
-      cad: { title: 'Conception 3D & impression', desc: "De l'idée au modèle 3D, puis à l'objet imprimé : pièces fonctionnelles, objets décoratifs, prototypes." },
-      fab: { title: 'Découpe laser & CNC', desc: "Gravure et découpe de précision sur bois et acrylique pour des luminaires, enseignes et objets sur mesure." },
-      arduino: { title: 'Prototypage Arduino', desc: "Systèmes embarqués intelligents en C++ : capteurs, LED, automatismes et petits objets connectés." },
-      web: { title: 'Web & identité visuelle', desc: "Sites et interfaces front-end en React, accompagnés d'un graphisme de marque cohérent." },
-    },
-  },
   nav: { label: 'Navigation des sections', home: 'Accueil', about: 'À propos', services: 'Services', projects: 'Projets', skills: 'Compétences', challenge: 'Défi', contact: 'Contact' },
   editorial: {
     news: 'Actualités',
@@ -114,7 +105,6 @@ const fr = {
       },
       lettres: { title: 'Lettres Mystères', cta: 'Lancer le jeu', desc: "Un jeu interactif en React. Les anagrammes sont déchiffrés sous pression de temps, combinant logique algorithmique, gestion d'états et design de jeu." },
       pret: { title: 'Calculateur de Prêt', cta: 'Calculer', desc: "Application financière de calcul des mensualités en temps réel. Elle démontre une intégration propre d'interfaces dynamiques, de contrôle des entrées et de design responsive." },
-      arcade: { title: 'Alex Arcade', cta: 'Jouer', desc: "Quiz néon de développement web : 10 questions aléatoires, 15 secondes par réponse, score et record local, dans une interface rétro-futuriste." },
     },
     tech: { cad: 'Modélisation 3D', cadDrafting: 'CAO', product: 'Design produit', cnc: 'CNC / découpe laser', lamp: 'Luminaire', electronics: 'Électronique', design: 'Design' },
   },
@@ -208,7 +198,6 @@ const fr = {
       errYears: 'Veuillez saisir une durée positive en années.',
       currency: 'FCFA',
     },
-    arcade: { title: 'Alex Arcade' },
   },
 }
 export default fr

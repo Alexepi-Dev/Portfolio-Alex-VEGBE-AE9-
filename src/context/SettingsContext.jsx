@@ -12,7 +12,7 @@ export function SettingsProvider({ children }) {
     if (saved === 'fr' || saved === 'en') return saved
     return (navigator.language || 'fr').toLowerCase().startsWith('en') ? 'en' : 'fr'
   })
-  const [theme, setTheme] = useState(() => (read('theme') === 'light' ? 'light' : 'dark'))
+  const [theme, setTheme] = useState(() => (read('theme') === 'dark' ? 'dark' : 'light'))
 
   useEffect(() => { document.documentElement.lang = lang; write('lang', lang) }, [lang])
   useEffect(() => { document.documentElement.setAttribute('data-theme', theme); write('theme', theme) }, [theme])

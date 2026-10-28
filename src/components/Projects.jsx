@@ -12,15 +12,15 @@ export default function Projects() {
   const [filter, setFilter] = useState('all')
 
   const items = [
-    ...physicalProjects.map((p) => ({ project: p, kind: 'physical' })),
-    ...webProjects.map((p) => ({ project: p, kind: 'web' })),
+    ...physicalProjects.map((project) => ({ project, kind: 'physical' })),
+    ...webProjects.map((project) => ({ project, kind: 'web' })),
   ]
     .sort((a, b) => t.projects.items[a.project.id].title.localeCompare(
       t.projects.items[b.project.id].title,
       lang === 'fr' ? 'fr' : 'en',
       { sensitivity: 'base' },
     ))
-    .filter((it) => filter === 'all' || it.kind === filter)
+    .filter((item) => filter === 'all' || item.kind === filter)
 
   return (
     <section id="projets" className="projects container">
@@ -49,8 +49,8 @@ export default function Projects() {
           exit={{ opacity: 0, y: -10 }}
           transition={{ duration: 0.25 }}
         >
-          {items.map(({ project, kind }, i) => (
-            <ProjectCard key={project.id} project={project} kind={kind} index={i} />
+          {items.map(({ project, kind }, index) => (
+            <ProjectCard key={project.id} project={project} kind={kind} index={index} />
           ))}
         </motion.div>
       </AnimatePresence>

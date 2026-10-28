@@ -4,6 +4,7 @@ import DOMPurify from 'dompurify'
 import { marked } from 'marked'
 import { useSettings } from '../context/SettingsContext'
 import { editorialContent, findRelatedEntries } from '../services/editorialContent'
+import { setPageSeo } from '../services/seo'
 
 function formatDate(date, lang) {
   return new Intl.DateTimeFormat(lang === 'fr' ? 'fr-FR' : 'en-GB', {
@@ -54,8 +55,12 @@ export default function EditorialPage({ type }) {
       ? entry.description
       : type === 'actualites' ? labels.newsDescription : labels.articlesDescription
 
-    document.title = `${pageTitle} | VEGBE Koffi Alex`
-    if (descriptionMeta) descriptionMeta.content = pageDescription
+    const seoTitle = `${pageTitle} | VEGBE Koffi Alex`
+    const canonicalUrl = `https://alexvegbeae9.netlify.app/#/${type}${slug ? `/${slug}` : ''}`
+    const seoImage = entry?.cover?.startsWith('/')
+      ? `https://alexvegbeae9.netlify.app${entry.cover}`
+      : entry?.cover || 'https://alexvegbeae9.netlify.app/images/hero.webp'
+    setPageSeo({ title: seoTitle, description: pageDescription, url: canonicalUrl, image: seoImage, type: entry ? 'article' : 'website' })
 
     return () => {
       document.title = previousTitle
@@ -63,7 +68,7 @@ export default function EditorialPage({ type }) {
         descriptionMeta.content = previousDescription
       }
     }
-  }, [collectionLabel, entry, labels.articlesDescription, labels.newsDescription, type])
+  }, [collectionLabel, entry, labels.articlesDescription, labels.newsDescription, slug, type])
 
   if (slug && !entry) {
     return (

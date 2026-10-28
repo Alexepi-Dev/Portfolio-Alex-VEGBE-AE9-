@@ -1,12 +1,12 @@
 import { motion } from 'framer-motion'
 import { useSettings } from '../context/SettingsContext'
-import { FaLinkedin, FaFacebook } from 'react-icons/fa'
+import { FaLinkedin, FaGithub, FaFacebook } from 'react-icons/fa'
 import { socials } from '../data/content'
 import { asset, scrollToSection } from '../utils'
 
 import Availability from './Availability'
 
-const socialIcons = { linkedin: FaLinkedin, facebook: FaFacebook }
+const socialIcons = { linkedin: FaLinkedin, github: FaGithub, facebook: FaFacebook }
 
 const container = { hidden: {}, show: { transition: { staggerChildren: 0.12 } } }
 const item = {

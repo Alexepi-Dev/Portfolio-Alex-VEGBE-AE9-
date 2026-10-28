@@ -8,9 +8,9 @@ import BackToTop from './components/BackToTop'
 import Home from './pages/Home'
 import AnagramGame from './pages/AnagramGame'
 import LoanCalculator from './pages/LoanCalculator'
-import Arcade from './pages/Arcade'
 import Challenge from './components/Challenge'
 import { useSettings } from './context/SettingsContext'
+import { addGoogleVerification, setPageSeo, setPersonStructuredData } from './services/seo'
 
 const EditorialPage = lazy(() => import('./pages/EditorialPage'))
 
@@ -35,6 +35,22 @@ function EditorialLoading() {
 
 export default function App() {
   const location = useLocation()
+  const { lang } = useSettings()
+
+  useEffect(() => {
+    setPersonStructuredData()
+    addGoogleVerification(import.meta.env.VITE_GOOGLE_SITE_VERIFICATION)
+    if (location.pathname === '/') {
+      setPageSeo({
+        title: lang === 'fr'
+          ? 'VEGBE Koffi Alex — Concepteur technique & Développeur'
+          : 'VEGBE Koffi Alex — Technical Designer & Developer',
+        description: lang === 'fr'
+          ? "Portfolio de VEGBE Koffi Alex, concepteur technique spécialisé en modélisation 3D, CNC, Arduino, droit du numérique et développement web."
+          : "Portfolio of VEGBE Koffi Alex, technical designer specialising in 3D modelling, CNC, Arduino, digital law and web development.",
+      })
+    }
+  }, [lang, location.pathname])
 
   useEffect(() => {
     if (!location.state?.scrollTo) window.scrollTo(0, 0)
@@ -53,7 +69,6 @@ export default function App() {
           <Route path="/articles/:slug" element={<Page><Suspense fallback={<EditorialLoading />}><EditorialPage type="articles" /></Suspense></Page>} />
           <Route path="/lettres-mysteres" element={<Page><AnagramGame /></Page>} />
           <Route path="/calculateur-pret" element={<Page><LoanCalculator /></Page>} />
-          <Route path="/arcade" element={<Page><Arcade /></Page>} />
           <Route path="/defis/arduino" element={<Page><Challenge challengeId="arduino" /></Page>} />
           <Route path="/defis/creation-web" element={<Page><Challenge challengeId="web" /></Page>} />
           <Route path="*" element={<Page><Home /></Page>} />
