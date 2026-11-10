@@ -1,0 +1,272 @@
+﻿{
+  "tier": "team",
+  "partial_results": false,
+  "shown_vulnerabilities": 3,
+  "total_vulnerabilities": 3,
+  "vulnerabilities_truncated": false,
+  "vulnerabilities_found_total": 3,
+  "vulnerabilities_stored_count": 3,
+  "max_vulnerabilities_stored": 5000,
+  "suppressed_occurrences_total": 0,
+  "suppressed_occurrences": [],
+  "hidden_locked_count": 0,
+  "frozen_resolved_all": false,
+  "upgrade_hint": null,
+  "scan_id": "8f937040913f4da4ab3b74f19ac889ac",
+  "project_path": "D:\\Pro\\Portfolio-Alex-VEGBE-AE9-",
+  "scanned_at": "2026-11-10T13:28:05.014039+00:00",
+  "scanned_files_count": 50,
+  "skipped_files": [],
+  "scan_duration_seconds": 0.83,
+  "score": {
+    "value": 80,
+    "grade": "B",
+    "label": "Bon",
+    "delta": 36,
+    "new_issues": 3,
+    "resolved_issues": 6
+  },
+  "policy": {
+    "fail_on": null,
+    "min_score": null,
+    "confidence": {
+      "policy_version": "ci-confidence-v1",
+      "mode": "report-only",
+      "enforce": false
+    }
+  },
+  "confidence": {
+    "policy_version": "ci-confidence-v1",
+    "mode": "report-only",
+    "by_level": {
+      "MEDIUM": 2,
+      "CONFIRMED": 1
+    },
+    "by_action": {
+      "INFO": 2,
+      "WARN": 1
+    },
+    "blocking_count": 0,
+    "hidden_count": 0
+  },
+  "severity_summary": {
+    "medium": 2,
+    "high": 1
+  },
+  "profile": null,
+  "vulnerability_count": 3,
+  "hardening_count": 0,
+  "vulnerabilities": [
+    {
+      "id": "2e7461a36745",
+      "category": "sensitive_data_exposure",
+      "category_display": "Exposition de donn\u00e9es sensibles",
+      "severity": "medium",
+      "confidence": "high",
+      "title": "Content-Security-Policy absente",
+      "description": "La page HTML d'entr\u00e9e n'a pas de CSP. Moins de d\u00e9fense en profondeur contre le XSS (CWE-693).",
+      "file_path": "index.html",
+      "line_number": 1,
+      "column": 0,
+      "recommendation": "Ajoutez une CSP stricte (script-src avec nonces/hashes, object-src 'none').",
+      "deployment_scope": "production",
+      "confidence_score": 0.94,
+      "confidence_level": "MEDIUM",
+      "confidence_reasons": [
+        "rule precision: 90.0% (sensitive_data_exposure)",
+        "complete local context",
+        "recognized language/framework"
+      ],
+      "policy_action": "INFO",
+      "policy_version": "ci-confidence-v1",
+      "rule_key": "sensitive_data_exposure",
+      "language": "html",
+      "waived": false,
+      "waiver_id": null,
+      "block_demoted": false,
+      "block_demote_reason": null,
+      "proof_level": "STATIC_EVIDENCE",
+      "prove": {
+        "evidence_version": "1",
+        "proof_level": "STATIC_EVIDENCE",
+        "confidence_basis": "Static pattern / AST / rule match (fail-closed default)",
+        "proof_basis": {
+          "proof_level": "STATIC_EVIDENCE",
+          "source": null,
+          "sink": {
+            "file": "index.html",
+            "line": 1,
+            "column": null,
+            "symbol": null,
+            "snippet": "<html> (no Content-Security-Policy)"
+          },
+          "flow_id": null,
+          "steps": 0,
+          "provenance_complete": false,
+          "assessor_version": "s54-1",
+          "confidence_basis": "Static pattern / AST / rule match (fail-closed default)",
+          "reasons": [
+            "PATTERN_MATCH"
+          ]
+        },
+        "evidence_reference": "evidence:v1:sensitive_data_exposure|Content-Security-Policy absente|index.html:STATIC_EVIDENCE:none",
+        "reasons": [
+          "PATTERN_MATCH"
+        ],
+        "finding_fingerprint": "sensitive_data_exposure|Content-Security-Policy absente|index.html",
+        "rule_id": null,
+        "cwe_id": "CWE-693",
+        "source": null,
+        "sink": {
+          "file": "index.html",
+          "line": 1,
+          "column": null,
+          "symbol": null,
+          "snippet": "<html> (no Content-Security-Policy)"
+        }
+      }
+    },
+    {
+      "id": "bc2fb5b4fa3a",
+      "category": "sensitive_data_exposure",
+      "category_display": "Exposition de donn\u00e9es sensibles",
+      "severity": "medium",
+      "confidence": "high",
+      "title": "Content-Security-Policy absente",
+      "description": "La page HTML d'entr\u00e9e n'a pas de CSP. Moins de d\u00e9fense en profondeur contre le XSS (CWE-693).",
+      "file_path": "public\\admin\\index.html",
+      "line_number": 1,
+      "column": 0,
+      "recommendation": "Ajoutez une CSP stricte (script-src avec nonces/hashes, object-src 'none').",
+      "deployment_scope": "production",
+      "confidence_score": 0.94,
+      "confidence_level": "MEDIUM",
+      "confidence_reasons": [
+        "rule precision: 90.0% (sensitive_data_exposure)",
+        "complete local context",
+        "recognized language/framework"
+      ],
+      "policy_action": "INFO",
+      "policy_version": "ci-confidence-v1",
+      "rule_key": "sensitive_data_exposure",
+      "language": "html",
+      "waived": false,
+      "waiver_id": null,
+      "block_demoted": false,
+      "block_demote_reason": null,
+      "proof_level": "STATIC_EVIDENCE",
+      "prove": {
+        "evidence_version": "1",
+        "proof_level": "STATIC_EVIDENCE",
+        "confidence_basis": "Static pattern / AST / rule match (fail-closed default)",
+        "proof_basis": {
+          "proof_level": "STATIC_EVIDENCE",
+          "source": null,
+          "sink": {
+            "file": "public\\admin\\index.html",
+            "line": 1,
+            "column": null,
+            "symbol": null,
+            "snippet": "<html> (no Content-Security-Policy)"
+          },
+          "flow_id": null,
+          "steps": 0,
+          "provenance_complete": false,
+          "assessor_version": "s54-1",
+          "confidence_basis": "Static pattern / AST / rule match (fail-closed default)",
+          "reasons": [
+            "PATTERN_MATCH"
+          ]
+        },
+        "evidence_reference": "evidence:v1:sensitive_data_exposure|Content-Security-Policy absente|index.html:STATIC_EVIDENCE:none",
+        "reasons": [
+          "PATTERN_MATCH"
+        ],
+        "finding_fingerprint": "sensitive_data_exposure|Content-Security-Policy absente|index.html",
+        "rule_id": null,
+        "cwe_id": "CWE-693",
+        "source": null,
+        "sink": {
+          "file": "public\\admin\\index.html",
+          "line": 1,
+          "column": null,
+          "symbol": null,
+          "snippet": "<html> (no Content-Security-Policy)"
+        }
+      }
+    },
+    {
+      "id": "95a083805293",
+      "category": "sensitive_data_exposure",
+      "category_display": "Exposition de donn\u00e9es sensibles",
+      "severity": "high",
+      "confidence": "high",
+      "title": "React dangerouslySetInnerHTML",
+      "description": "dangerouslySetInnerHTML injecte du HTML brut dans le DOM. Des donn\u00e9es non assainies deviennent du XSS (CWE-79).",
+      "file_path": "src\\pages\\EditorialPage.jsx",
+      "line_number": 135,
+      "column": 0,
+      "recommendation": "\u00c9vitez dangerouslySetInnerHTML. Sinon, assainissez (DOMPurify) et pr\u00e9f\u00e9rez Trusted Types.",
+      "deployment_scope": "production",
+      "confidence_score": 1.0,
+      "confidence_level": "CONFIRMED",
+      "confidence_reasons": [
+        "rule precision: 90.0% (sensitive_data_exposure)",
+        "recognized sink",
+        "untrusted input detected",
+        "complete local context",
+        "recognized language/framework",
+        "uncalibrated rule \u2014 not on block allowlist (sensitive_data_exposure)"
+      ],
+      "policy_action": "WARN",
+      "policy_version": "ci-confidence-v1",
+      "rule_key": "sensitive_data_exposure",
+      "language": "javascript",
+      "waived": false,
+      "waiver_id": null,
+      "block_demoted": true,
+      "block_demote_reason": "uncalibrated rule \u2014 not on block allowlist (sensitive_data_exposure)",
+      "proof_level": "STATIC_EVIDENCE",
+      "prove": {
+        "evidence_version": "1",
+        "proof_level": "STATIC_EVIDENCE",
+        "confidence_basis": "Static pattern / AST / rule match (fail-closed default)",
+        "proof_basis": {
+          "proof_level": "STATIC_EVIDENCE",
+          "source": null,
+          "sink": {
+            "file": "src\\pages\\EditorialPage.jsx",
+            "line": 135,
+            "column": null,
+            "symbol": null,
+            "snippet": "<div className=\"editorial-body\" dangerouslySetInnerHTML={{ __html: sanitizedBody }} />"
+          },
+          "flow_id": null,
+          "steps": 0,
+          "provenance_complete": false,
+          "assessor_version": "s54-1",
+          "confidence_basis": "Static pattern / AST / rule match (fail-closed default)",
+          "reasons": [
+            "PATTERN_MATCH"
+          ]
+        },
+        "evidence_reference": "evidence:v1:sensitive_data_exposure|React dangerouslySetInnerHTML|editorialpage.jsx:STATIC_EVIDENCE:none",
+        "reasons": [
+          "PATTERN_MATCH"
+        ],
+        "finding_fingerprint": "sensitive_data_exposure|React dangerouslySetInnerHTML|editorialpage.jsx",
+        "rule_id": null,
+        "cwe_id": "CWE-79",
+        "source": null,
+        "sink": {
+          "file": "src\\pages\\EditorialPage.jsx",
+          "line": 135,
+          "column": null,
+          "symbol": null,
+          "snippet": "<div className=\"editorial-body\" dangerouslySetInnerHTML={{ __html: sanitizedBody }} />"
+        }
+      }
+    }
+  ],
+  "hidden_low_confidence": []
+}

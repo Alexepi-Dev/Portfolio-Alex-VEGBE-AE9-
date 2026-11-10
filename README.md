@@ -60,3 +60,5 @@ Paramètres de production à vérifier dans Netlify :
 - Dossier publié : `dist`
 
 Le portfolio utilise `HashRouter` et conserve `base: './'`. Aucun fichier de configuration Netlify n’est suivi dans ce dépôt; ces paramètres doivent donc être confirmés dans le tableau de bord Netlify.
+
+Le fichier `public/_headers` est copié par Vite à la racine de `dist` et configure une CSP en mode `Report-Only`. Après déploiement, vérifiez les violations dans la console du navigateur sur le portfolio et `/admin/` avant d'envisager son application effective. `style-src-attr 'unsafe-inline'` est limité aux styles inline utilisés par des composants React; les scripts inline restent interdits par la politique.

@@ -1,0 +1,2 @@
+/*
+  Content-Security-Policy-Report-Only: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' https://fonts.googleapis.com; style-src-attr 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; img-src 'self' https:; connect-src 'self' https://*.supabase.co wss://*.supabase.co https://formspree.io https://api.github.com https://github.com; form-action 'self' https://formspree.io https://github.com; frame-src 'self'
